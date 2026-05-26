@@ -1,17 +1,33 @@
-# Advance ASD Detection (Multimodal AI)
+## Early Detection of ASD — Text + Image Multi-Modal System
 
-## Overview
-Advance-ASD-Detection is a prototype AI system designed to assist in the early screening of Autism Spectrum Disorder (ASD) indicators. By employing a **multimodal approach**, the system processes textual input and visual data (images) to generate a risk assessment profile.
+Lab project: **multi-modal ASD screening** using:
 
-## Key Features
-- **Multimodal Fusion:** Integrates linguistic patterns and visual features for a holistic analysis.
-- **Dynamic Scoring:** Implements a weighted algorithm to prioritize specific modalities based on input availability.
-- **Explainability:** Provides basic insights into how different data inputs contribute to the final risk score.
-- **Clinical Awareness:** Includes thresholds to categorize risk levels (High, Medium, Low) for actionable reporting.
+- **Image (primary)** — HOG facial features + linear classifier (`asd_images/ASD`, `asd_images/No_ASD`)
+- **Text** — caregiver/clinician notes via TF-IDF + Logistic Regression (`asd_text.csv`)
 
-## Disclaimer
-**Important:** This tool is strictly for research and supportive screening purposes only. It is not a substitute for professional clinical diagnosis. Always consult a qualified medical professional for any health-related concerns.
+Tabular questionnaire data is **not** used in this version.
 
-## Installation
+### Files
+
+| File | Purpose |
+|------|---------|
+| `advance_asd_detection.ipynb` | Main notebook (train + user input) |
+| `advance_asd_detection_executed.ipynb` | Fully executed copy with outputs |
+| `asd_text.csv` | Text notes + labels |
+| `asd_images/ASD/` | ASD-labeled images |
+| `asd_images/No_ASD/` | Non-ASD images |
+
+If image folders are empty, the notebook auto-generates demo face images for training.
+
+### Setup
+
 ```bash
 pip install -r requirements.txt
+jupyter notebook advance_asd_detection.ipynb
+```
+
+Run **Kernel → Restart & Run All**. Edit `example_image_path` and `example_text_note` in the user-input cell for your demo.
+
+### Fusion
+
+Combines image + text with strategies: `average`, `weighted` (65% image / 35% text), `voting`, `meta`.

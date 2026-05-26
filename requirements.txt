@@ -1,9 +1,9 @@
-notebook
-ipywidgets
-torch
-torchvision
-torchaudio
-transformers
-opencv-python
 numpy
+pandas
 matplotlib
+seaborn
+scikit-learn
+scikit-image
+Pillow
+jupyter
+nbconvert
