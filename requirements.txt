@@ -6,4 +6,6 @@ scikit-learn
 scikit-image
 Pillow
 jupyter
+notebook
 nbconvert
+joblib
