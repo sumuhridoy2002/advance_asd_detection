@@ -12,7 +12,6 @@ Tabular questionnaire data is **not** used in this version.
 | File | Purpose |
 |------|---------|
 | `advance_asd_detection.ipynb` | Main notebook (train + user input) |
-| `advance_asd_detection_executed.ipynb` | Fully executed copy with outputs |
 | `asd_text.csv` | Text notes + labels |
 | `asd_images/ASD/` | ASD-labeled images |
 | `asd_images/No_ASD/` | Non-ASD images |
