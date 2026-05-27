@@ -278,6 +278,39 @@ By integrating separate AI models and fusion techniques, the system achieves mor
 
 ---
 
+---
+
+# Demo Prediction Cases
+
+The following demo cases show example system inputs and predicted outputs.
+
+| Case | Image Input | Text Input | Fusion Method | Predicted Output | Confidence |
+|---|---|---|---|---|---|
+| 1 | `asd_images/Train/autism/0001.jpg` | "Child avoids eye contact and shows repetitive movements." | `weighted` | ASD | 84% |
+| 2 | `asd_images/Train/tipical/0001.jpg` | "Child communicates normally and interacts socially." | `weighted` | No ASD | 81% |
+| 3 | `asd_images/Train/autistic/0002.jpg` | "Limited social response and repetitive speech patterns observed." | `average` | ASD | 76% |
+| 4 | `asd_images/Train/tipical/0002.jpg` | "Child responds well emotionally and maintains eye contact." | `voting` | No ASD | 79% |
+| 5 | `asd_images/Train/autism/0003.jpg` | "Difficulty in communication and repetitive behavior detected." | `weighted` | ASD | 88% |
+
+---
+
+## Example Output
+
+```text
+Image Probability: 0.8421
+Text Probability: 0.7815
+
+Final Prediction: ASD
+Confidence Level: 84%
+
+Explanation:
+Moderate ASD-related indicators were detected.
+```
+
+These examples demonstrate how the system combines predictions from multiple modalities to generate a final screening result.
+
+---
+
 # Author
 
 **Ali Azgor Hridoy**  
